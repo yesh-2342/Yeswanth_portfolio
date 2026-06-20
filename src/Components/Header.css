@@ -5,23 +5,24 @@
     align-items: center;
     background-color: #010c17;
     padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-
 .header {
+    max-width: 100%;
+    margin: 0;
     font-family: 'Roboto Mono', monospace;
     color: rgb(240, 232, 232);
-    font-size: clamp(1.5rem, 1vw, 1rem);
+    font-size: clamp(1rem, 1.6vw, 1.5rem);
+    line-height: 1.6;
     text-align: center;
-
     overflow: hidden;
     white-space: nowrap;
     border-right: 3px solid #f6260b;
-
     width: 0;
-
     animation:
-        typing 6s steps(90, end) forwards,
+        typing 6s steps(120, end) forwards,
         blink-caret .75s infinite;
 }
 
@@ -31,12 +32,51 @@
     }
 
     to {
-        width: 100ch;
+        width: 120ch;
     }
 }
 
 @keyframes blink-caret {
     50% {
         border-color: transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        min-height: 55vh;
+        padding: 48px 22px;
+    }
+
+    .header {
+        width: 100%;
+        max-width: 34rem;
+        overflow: visible;
+        white-space: normal;
+        border-right: 0;
+        font-size: clamp(1.15rem, 5vw, 1.6rem);
+        line-height: 1.55;
+        animation: mobile-header-reveal 1.2s ease-out both;
+    }
+}
+
+@keyframes mobile-header-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header {
+        width: auto;
+        white-space: normal;
+        border-right: 0;
+        animation: none;
     }
 }
