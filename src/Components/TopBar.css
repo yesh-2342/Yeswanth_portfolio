@@ -1,0 +1,324 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #010c17;
+    box-sizing: border-box;
+    border-bottom: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo-button {
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.logo-button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.logo-img {
+    display: block;
+    width: 210px;
+    height: 118px;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-button:hover .logo-img {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+.logo-name {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px black;
+}
+
+.topbar-welcome {
+    flex: 1;
+    padding: 0 32px;
+    text-align: center;
+}
+
+.topbar-welcome span {
+    display: block;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: clamp(18px, 2vw, 28px);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.topbar-welcome p {
+    margin: 7px 0 0;
+    color: #c7ced6;
+    font-size: clamp(11px, 1vw, 14px);
+    letter-spacing: 0.4px;
+}
+
+.topbar-end {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar-end a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    transition: 0.3s;
+    position: relative;
+}
+
+.topbar-end a:hover {
+    color: #f6260b;
+}
+
+.topbar-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f6260b;
+    transition: width 0.3s ease;
+}
+
+.topbar-menu a:hover::after {
+    width: 100%;
+}
+
+.resume-btn {
+    padding: 10px 20px;
+    border: 2px solid #f6260b;
+    background: transparent;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: #f6260b;
+}
+
+.logo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+.logo-modal-frame {
+    position: relative;
+    width: min(1400px, 94vw);
+    max-height: 92vh;
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 16px;
+    background: #010c17;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+}
+
+.logo-modal-frame img {
+    display: block;
+    width: 100%;
+    max-height: calc(92vh - 16px);
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.logo-modal-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #010c17;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.logo-modal-close:hover {
+    background: #f6260b;
+}
+
+.resume-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+.resume-modal-frame {
+    position: relative;
+    width: min(1200px, 96vw);
+    height: 94vh;
+    overflow: hidden;
+    border: 2px solid #f6260b;
+    border-radius: 14px;
+    background: #010c17;
+    box-shadow: 0 0 45px rgba(246, 38, 11, 0.5);
+}
+
+.resume-modal-actions {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resume-open-link {
+    padding: 9px 14px;
+    border: 2px solid #f6260b;
+    border-radius: 8px;
+    background: #010c17;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.resume-open-link:hover {
+    background: #f6260b;
+}
+
+.resume-modal-close {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #f6260b;
+    border-radius: 50%;
+    background: #010c17;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 34px;
+}
+
+.resume-modal-close:hover {
+    background: #f6260b;
+}
+
+.resume-viewer {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .topbar-welcome {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .topbar-end {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .topbar-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .topbar-menu a {
+        font-size: 14px;
+    }
+
+    .logo-img {
+        width: 180px;
+        height: 101px;
+    }
+
+    .logo-modal {
+        padding: 12px;
+    }
+
+    .logo-modal-close {
+        top: -12px;
+        right: -6px;
+    }
+
+    .resume-modal {
+        padding: 8px;
+    }
+
+    .resume-modal-frame {
+        width: 100%;
+        height: 96vh;
+    }
+
+    .resume-modal-actions {
+        top: 8px;
+        right: 8px;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #010c17;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}

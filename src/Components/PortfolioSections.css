@@ -1,0 +1,196 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 135px;
+}
+
+.portfolio-content {
+    background: #010c17;
+    color: #f5f5f5;
+}
+
+.portfolio-section,
+.contact-section {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.portfolio-section + .portfolio-section,
+.contact-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.section-label {
+    margin: 0 0 12px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.portfolio-section > h2,
+.contact-section h2 {
+    max-width: 800px;
+    margin: 0 0 42px;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.about-copy {
+    color: white;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-copy p:first-child {
+    margin-top: 0;
+}
+
+.about-facts {
+    margin: 0;
+    padding-left: 24px;
+    color: white;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 60px;
+}
+
+.skill-group h3,
+.project-entry h3 {
+    margin: 0 0 12px;
+    font-size: 21px;
+}
+
+.skill-group ul {
+    margin: 0;
+    padding-left: 22px;
+    color: white;
+    line-height: 1.8;
+}
+
+.projects-grid {
+    display: block;
+}
+
+.project-entry {
+    padding: 0 0 35px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.project-stack {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-entry > p:not(.project-stack),
+.project-entry li {
+    color: white;
+    line-height: 1.65;
+}
+
+.project-entry ul {
+    padding-left: 19px;
+}
+
+.contact-section {
+    padding-bottom: 130px;
+}
+
+.contact-section > p:not(.section-label) {
+    color: white;
+    font-size: 18px;
+}
+
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    color: white;
+}
+
+.contact-list a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 18px;
+    border: 2px solid #ff7a00;
+    border-radius: 8px;
+    background: #ff7a00;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    box-shadow: 0 0 16px rgba(255, 122, 0, 0.28);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-list a:hover {
+    background: transparent;
+    color: #ff9d43;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    html {
+        scroll-padding-top: 220px;
+    }
+
+    .portfolio-section,
+    .contact-section {
+        width: min(100% - 28px, 1120px);
+        padding: 70px 0;
+    }
+
+    .portfolio-section > h2,
+    .contact-section h2 {
+        margin-bottom: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-copy {
+        font-size: 16px;
+    }
+
+    .contact-list {
+        flex-direction: column;
+    }
+
+    .contact-list a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
