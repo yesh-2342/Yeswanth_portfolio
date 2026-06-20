@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+<rect width="1024" height="1024" fill="black"/>
+
+<defs>
+  <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#ff4d4d"/>
+    <stop offset="100%" stop-color="#cc0000"/>
+  </linearGradient>
+</defs>
+
+<!-- Y -->
+<polygon points="175,335 315,335 400,435 595,335 480,515 480,660 240,760 336,548"
+fill="white"/>
+
+<!-- K -->
+<polygon points="700,335 840,335 640,550 850,760 700,760 560,610 480,680 480,548"
+fill="url(#redGrad)"/>
+</svg>
